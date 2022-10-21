@@ -12,7 +12,7 @@ try:
         for duty in range(0, 101, 1):       # 점점 증가함(점점 밝아짐), 마치 아날로그 신호처럼 보임
             pi_pwm.ChangeDutyCycle(duty)    # 시간이 늘어남
             sleep(0.01)
-        sleep(0.5)                          # 완전 켜진 상타 유지
+        sleep(0.5)                          # 완전 켜진 상태 유지
 
         for duty in range(100, -1, -1):     # 점점 작아짐 (점점 어두어짐)
             pi_pwm.ChangeDutyCycle(duty)    # 시간이 줄어들음
