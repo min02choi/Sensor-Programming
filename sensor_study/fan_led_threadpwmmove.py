@@ -5,7 +5,6 @@ import sys
 import threading
 
 # 사용자의 입력값에 따라 선풍기 틀음
-# time.sleep(초)를 통해 특정시간동안 fan on, stop_fan_led함수를 통해 그 시간이 정하면 꺼지게 함
 # thread를 사용하여 fan을 돌림과 동시에 led깜빡임, buzzer
 def signal_handler(signal, frame):
     print('process stop')
@@ -36,23 +35,25 @@ def ledRGB_OnOff():
         setRGB(0, 0, 0)
         time.sleep(t)
 
+# 입력 값에 따라 지정된 음을 내는 함수
+# buzzer까지 삡-삡 하게 하려면 위의 LED처럼 변수를 main에서 다 정해주어야 할듯
 def buzzer_OnOff():
     global PWM_Piezo
     global piezo_time
     global user
 
     while True:
+        PWM_Piezo.ChangeDutyCycle(5)
+
         if (user == "high"):
-            PWM_Piezo.ChangeDutyCycle(5)
             PWM_Piezo.ChangeFrequency(400)
         elif (user == "middle"):
-            PWM_Piezo.ChangeDutyCycle(5)
             PWM_Piezo.ChangeFrequency(300)
         elif (user == "low"):
-            PWM_Piezo.ChangeDutyCycle(5)
             PWM_Piezo.ChangeFrequency(200)
         else:
             PWM_Piezo.ChangeDutyCycle(0)
+
 
 GPIO.setmode(GPIO.BCM)
 

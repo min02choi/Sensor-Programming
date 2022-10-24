@@ -3,8 +3,8 @@ import time
 import signal
 import sys
 
-# 사용자의 입력값에 따라 선풍기 틀음
-# time.sleep(초)를 통해 특정시간동안 fan on, stop_fan_led함수를 통해 그 시간이 정하면 꺼지게 함
+# 사용자의 입력 값에 따라 선풍기 틀음
+# time.sleep(초)를 통해 특정 시간 동안 fan on, stop_fan_led함수를 통해 그 시간이 정하면 꺼지게 함
 
 def signal_handler(signal, frame):
     print('process stop')
@@ -18,9 +18,11 @@ def setRGB(r, g, b):
     PWM_GREEN.ChangeDutyCycle(g)
     PWM_BLUE.ChangeDutyCycle(b)
 
+# LED와 Fan을 끔
 def stop_fan_led():
     setRGB(0, 0, 0)
     PWM_Fan.ChangeDutyCycle(0)
+
 
 GPIO.setmode(GPIO.BCM)
 

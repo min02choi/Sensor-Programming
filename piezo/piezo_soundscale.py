@@ -10,7 +10,7 @@ scale = [261, 294, 329, 349, 392, 440, 493, 523]
 GPIO.setup(gpio_pin, GPIO.OUT)
 
 try:
-    p = GPIO.PWM(gpio_pin, 10)
+    p = GPIO.PWM(gpio_pin, 10)  # 10정도로 해야 소리가 나름 잘 남
     p.start(100)                # start the PWM on 100% duty cycle
     p.ChangeDutyCycle(10)       # change the duty cycle to 90%
 

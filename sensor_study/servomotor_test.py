@@ -5,7 +5,6 @@ import signal
 import sys
 
 
-
 def signal_handler(signal, frame):
     print('process stop')
     PWM_servo.stop()
@@ -15,7 +14,7 @@ def signal_handler(signal, frame):
 
 signal.signal(signal.SIGINT, signal_handler)
 
-
+# 쓰지마셈
 def setAngle(angle):
 	duty = angle / 18 + 2
 	GPIO.output(23, True)

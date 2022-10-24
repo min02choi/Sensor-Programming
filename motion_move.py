@@ -34,6 +34,7 @@ GPIO.setup(MOTION_IN, GPIO.IN)
 # GPIO.RISING: Low -> High로 변화가 일어날 때 감지, callback 함수 호출
 # 무엇인가 지나갈 때 호출
 GPIO.add_event_detect(MOTION_IN, GPIO.RISING, callback=my_callback)
+GPIO.add_event_detect(MOTION_IN, )
 
 while True:
     if humandetect == 1:

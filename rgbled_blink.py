@@ -11,6 +11,8 @@ def signal_handler(signal, frame):
 
 
 signal.signal(signal.SIGINT, signal_handler)
+
+
 GPIO.setmode(GPIO.BCM)      # BCM Mode
 RGBLEDPOWER = 19            # GPIO 19(Wpi : 24), 전원 공급
 
