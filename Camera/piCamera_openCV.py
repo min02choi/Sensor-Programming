@@ -17,7 +17,7 @@ time.sleep(0.1)
 face_cascade = cv2.Cascadeclassifier("haarcascade_frontalface_default.xml")
 
 # capture frames from the camera
-for frame in camera.capture_continuous(rawCapture, format="bgr",use_video_port=True):
+for frame in camera.capture_continuous(rawCapture, format="bgr", use_video_port=True):
 
     # grab the raw NumPy array representing the image, then initialize the timestamp
     # and occupied/unoccupied text
@@ -33,7 +33,7 @@ for frame in camera.capture_continuous(rawCapture, format="bgr",use_video_port=T
 
     # Draw rectangle around the faces
     for (x, y, w, h) in faces:
-        cv2. rectangle (image, (x, y), (x + w, y + h), (255, 0, 0), 2)
+        cv2.rectangle(image, (x, y), (x + w, y + h), (255, 0, 0), 2)
 
     # Display the output
     cv2.imshow('Face images', image)
