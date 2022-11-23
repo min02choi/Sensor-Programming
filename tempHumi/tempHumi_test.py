@@ -18,6 +18,7 @@ DHPIN = 7
 PULSES_CNT = 41
 MAX_CNT = 320
 
+
 def sizecvt(read):
     if (read > 255 or read < 0):
         print("Invalid data from wiringPi library")
